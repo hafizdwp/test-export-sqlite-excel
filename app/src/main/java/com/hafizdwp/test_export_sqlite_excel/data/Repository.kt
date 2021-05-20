@@ -1,6 +1,7 @@
 package com.hafizdwp.test_export_sqlite_excel.data
 
 import com.hafizdwp.test_export_sqlite_excel.Tes
+import com.hafizdwp.test_export_sqlite_excel.ktor.RandomFact
 
 /**
  * @author hafizdwp
@@ -15,6 +16,10 @@ class Repository(private val remoteDataSource: RemoteDataSource,
 
     suspend fun getAll(): List<Tes> {
         return localDataSource.getAll()
+    }
+
+    suspend fun getRandomFact(): RandomFact {
+        return remoteDataSource.getRandomFact()
     }
 
     companion object {

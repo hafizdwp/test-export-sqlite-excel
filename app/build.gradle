@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-android-extensions'
+    id 'kotlinx-serialization'
 }
 
 android {
@@ -53,6 +54,12 @@ dependencies {
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+
+    implementation 'io.ktor:ktor-client-android:1.5.0'
+    implementation 'io.ktor:ktor-client-okhttp:1.5.0'
+    implementation 'io.ktor:ktor-client-serialization:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1'
+    implementation 'io.ktor:ktor-client-logging-jvm:1.5.0'
 
     implementation 'com.ajts.androidmads.SQLite2Excel:library:1.0.4'
 

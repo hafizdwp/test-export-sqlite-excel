@@ -6,6 +6,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hafizdwp.test_export_sqlite_excel.MainViewModel
+import com.hafizdwp.test_export_sqlite_excel.ktor.ktorHttpClient
 
 /**
  * @author hafizdwp
@@ -37,7 +38,7 @@ class ViewModelFactory(private val repository: Repository) : ViewModelProvider.F
 
         private fun provideRepository(context: Context): Repository {
             val database = Database.getInstance(context)
-            val rds = RemoteDataSource()
+            val rds = RemoteDataSource(ktorHttpClient)
             val lds = LocalDataSource.getInstance(database)
 
             return Repository.getInstance(rds, lds)
